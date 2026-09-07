@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AD50ED7EEEF86810D8C4E2E /* LendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B80431BC7180A7C136C9C1 /* LendingModel.swift */; };
+		10A160ABF0587B5911E3C662 /* TermsOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310E81D0E8FA145C33110E06 /* TermsOverlay.swift */; };
+		201789A1AC62E8B367DD6E71 /* VelloroWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7FD3299DCE2B4B0A2ADFBF /* VelloroWebPanel.swift */; };
+		2B27A6494CF94F25DEA124C3 /* CounterFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B958622AAA6ED467C66EB1 /* CounterFormatting.swift */; };
+		2DE0B9AA297312F4E329124E /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7148AC877106CEF9FF9D34 /* CityView.swift */; };
+		4169A50021A520AA18FEACE5 /* HouseLedgerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DB66961AFABB85F43F7819 /* HouseLedgerStore.swift */; };
+		44234283FA3A633A84A0B7BF /* CounterIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D3D2C922C25831D5AC7F7 /* CounterIcons.swift */; };
+		54CE81641CDC62DD90D82597 /* LedgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4DC620EFC79E451D670D0 /* LedgerView.swift */; };
+		6868751F81C114FD88CE434A /* VelloroLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E12E1201FF6F21C8ED86A5E /* VelloroLoadingScreen.swift */; };
+		9261D43B8C2A9FB720F1481E /* WeekReportOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7E60B65396FFE9A06D45B /* WeekReportOverlay.swift */; };
+		9902DA51FA3810641B6A3022 /* VelloroApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BAB5140F1F53EFBD2FDA69 /* VelloroApp.swift */; };
+		A39698C3846D97A59B56C5F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C4B009F2DE59ECB240F0D8 /* ContentView.swift */; };
+		B01DA20ED6BB4F90D11093D0 /* CounterTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28F4DAEC9D517208A0D27EF /* CounterTheme.swift */; };
+		B1950C24A20C954513DB5005 /* GuideOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB39E118B3467349990ACA /* GuideOverlay.swift */; };
+		BD8FFD51C3089A08723B22AA /* HouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4AE3B9B285D17EE1F7E5D /* HouseView.swift */; };
+		C56AEAB8AC1DF5ED74B42838 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879CDA6019C7B210014B8F2E /* CounterView.swift */; };
+		D262BA7679E720410F27E77C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07F3CB0010CD9772EAB49D09 /* Assets.xcassets */; };
+		DA19608F2BEA3B6C3C7C2554 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02B8C0527018E6FFAAE19A6 /* MoreView.swift */; };
+		F1FCF8A1FEC9FAEC54C04E43 /* RiskEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1DE2C946DE4F48D26DEA53 /* RiskEngine.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07F3CB0010CD9772EAB49D09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14AB39E118B3467349990ACA /* GuideOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideOverlay.swift; sourceTree = "<group>"; };
+		1E12E1201FF6F21C8ED86A5E /* VelloroLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelloroLoadingScreen.swift; sourceTree = "<group>"; };
+		23C4B009F2DE59ECB240F0D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2F1DE2C946DE4F48D26DEA53 /* RiskEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskEngine.swift; sourceTree = "<group>"; };
+		310E81D0E8FA145C33110E06 /* TermsOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOverlay.swift; sourceTree = "<group>"; };
+		5CC4AE3B9B285D17EE1F7E5D /* HouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseView.swift; sourceTree = "<group>"; };
+		624D3D2C922C25831D5AC7F7 /* CounterIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterIcons.swift; sourceTree = "<group>"; };
+		62BAB5140F1F53EFBD2FDA69 /* VelloroApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelloroApp.swift; sourceTree = "<group>"; };
+		7959AAB7EDBD868A80105940 /* Velloro.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Velloro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85B958622AAA6ED467C66EB1 /* CounterFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFormatting.swift; sourceTree = "<group>"; };
+		879CDA6019C7B210014B8F2E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		8A7FD3299DCE2B4B0A2ADFBF /* VelloroWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelloroWebPanel.swift; sourceTree = "<group>"; };
+		A9DB66961AFABB85F43F7819 /* HouseLedgerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseLedgerStore.swift; sourceTree = "<group>"; };
+		B02B8C0527018E6FFAAE19A6 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		C4E0AAF222A5E43101B3F3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D7B80431BC7180A7C136C9C1 /* LendingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LendingModel.swift; sourceTree = "<group>"; };
+		E28F4DAEC9D517208A0D27EF /* CounterTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTheme.swift; sourceTree = "<group>"; };
+		E2F4DC620EFC79E451D670D0 /* LedgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerView.swift; sourceTree = "<group>"; };
+		EB7148AC877106CEF9FF9D34 /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
+		FDD7E60B65396FFE9A06D45B /* WeekReportOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekReportOverlay.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		6156DA8B23B50E7200F59E45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7959AAB7EDBD868A80105940 /* Velloro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BF02D8908B221301038019A = {
+			isa = PBXGroup;
+			children = (
+				FF714A321209FC0D91BCD740 /* Velloro */,
+				6156DA8B23B50E7200F59E45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF714A321209FC0D91BCD740 /* Velloro */ = {
+			isa = PBXGroup;
+			children = (
+				07F3CB0010CD9772EAB49D09 /* Assets.xcassets */,
+				EB7148AC877106CEF9FF9D34 /* CityView.swift */,
+				62BAB5140F1F53EFBD2FDA69 /* VelloroApp.swift */,
+				1E12E1201FF6F21C8ED86A5E /* VelloroLoadingScreen.swift */,
+				8A7FD3299DCE2B4B0A2ADFBF /* VelloroWebPanel.swift */,
+				23C4B009F2DE59ECB240F0D8 /* ContentView.swift */,
+				85B958622AAA6ED467C66EB1 /* CounterFormatting.swift */,
+				624D3D2C922C25831D5AC7F7 /* CounterIcons.swift */,
+				E28F4DAEC9D517208A0D27EF /* CounterTheme.swift */,
+				879CDA6019C7B210014B8F2E /* CounterView.swift */,
+				14AB39E118B3467349990ACA /* GuideOverlay.swift */,
+				A9DB66961AFABB85F43F7819 /* HouseLedgerStore.swift */,
+				5CC4AE3B9B285D17EE1F7E5D /* HouseView.swift */,
+				C4E0AAF222A5E43101B3F3FF /* Info.plist */,
+				E2F4DC620EFC79E451D670D0 /* LedgerView.swift */,
+				D7B80431BC7180A7C136C9C1 /* LendingModel.swift */,
+				B02B8C0527018E6FFAAE19A6 /* MoreView.swift */,
+				2F1DE2C946DE4F48D26DEA53 /* RiskEngine.swift */,
+				310E81D0E8FA145C33110E06 /* TermsOverlay.swift */,
+				FDD7E60B65396FFE9A06D45B /* WeekReportOverlay.swift */,
+			);
+			path = "Velloro";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		486603EC8FC88556AFBB831E /* Velloro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD1588C8114963666DF0C14C /* Build configuration list for PBXNativeTarget "Velloro" */;
+			buildPhases = (
+				AD9FA7FF69DD8B181B81E032 /* Sources */,
+				7009ED1AEEA545DAAB18CC7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Velloro";
+			packageProductDependencies = (
+			);
+			productName = "Velloro";
+			productReference = 7959AAB7EDBD868A80105940 /* Velloro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		268599DDBD117AB6E83C2D5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					486603EC8FC88556AFBB831E = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 6D5EFD9E8FB61A33CEF37B65 /* Build configuration list for PBXProject "Velloro" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 9BF02D8908B221301038019A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6156DA8B23B50E7200F59E45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				486603EC8FC88556AFBB831E /* Velloro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7009ED1AEEA545DAAB18CC7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D262BA7679E720410F27E77C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD9FA7FF69DD8B181B81E032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DE0B9AA297312F4E329124E /* CityView.swift in Sources */,
+				9902DA51FA3810641B6A3022 /* VelloroApp.swift in Sources */,
+				6868751F81C114FD88CE434A /* VelloroLoadingScreen.swift in Sources */,
+				201789A1AC62E8B367DD6E71 /* VelloroWebPanel.swift in Sources */,
+				A39698C3846D97A59B56C5F9 /* ContentView.swift in Sources */,
+				2B27A6494CF94F25DEA124C3 /* CounterFormatting.swift in Sources */,
+				44234283FA3A633A84A0B7BF /* CounterIcons.swift in Sources */,
+				B01DA20ED6BB4F90D11093D0 /* CounterTheme.swift in Sources */,
+				C56AEAB8AC1DF5ED74B42838 /* CounterView.swift in Sources */,
+				B1950C24A20C954513DB5005 /* GuideOverlay.swift in Sources */,
+				4169A50021A520AA18FEACE5 /* HouseLedgerStore.swift in Sources */,
+				BD8FFD51C3089A08723B22AA /* HouseView.swift in Sources */,
+				54CE81641CDC62DD90D82597 /* LedgerView.swift in Sources */,
+				0AD50ED7EEEF86810D8C4E2E /* LendingModel.swift in Sources */,
+				DA19608F2BEA3B6C3C7C2554 /* MoreView.swift in Sources */,
+				F1FCF8A1FEC9FAEC54C04E43 /* RiskEngine.swift in Sources */,
+				10A160ABF0587B5911E3C662 /* TermsOverlay.swift in Sources */,
+				9261D43B8C2A9FB720F1481E /* WeekReportOverlay.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		01851846184044252CC8EA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B16E725EF6C0D09315AE3487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C323DC24361BFB66EE0B8945 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Velloro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dominikperic.velloro;
+				PRODUCT_NAME = "Velloro";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F29774C8CB6D8E2727110A26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Velloro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dominikperic.velloro;
+				PRODUCT_NAME = "Velloro";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D5EFD9E8FB61A33CEF37B65 /* Build configuration list for PBXProject "Velloro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B16E725EF6C0D09315AE3487 /* Debug */,
+				01851846184044252CC8EA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FD1588C8114963666DF0C14C /* Build configuration list for PBXNativeTarget "Velloro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F29774C8CB6D8E2727110A26 /* Debug */,
+				C323DC24361BFB66EE0B8945 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 268599DDBD117AB6E83C2D5C /* Project object */;
+}
