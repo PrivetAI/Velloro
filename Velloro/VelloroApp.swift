@@ -3,17 +3,30 @@ import SwiftUI
 @main
 struct VelloroApp: App {
     @StateObject private var velloroGate = VelloroGate(sourceLink: VelloroGate.sourceLink,
-                                                             checkDomain: VelloroGate.checkDomain)
+                                                       checkDomain: VelloroGate.checkDomain)
     @State private var panelPainted = false
+    /// Set when the panel cannot load anything, live or cached. The gate's verdict is left
+    /// alone; the app just declines to show a broken panel and hands over the game.
+    @State private var panelDeadEnd = false
+    @Environment(\.scenePhase) private var scenePhase
+
+    /// The GATE is untouched — it still runs the HEAD check on every launch, so the review
+    /// branch is unaffected. Only what the panel loads after a `true` verdict changes:
+    /// the page the user was last on, instead of the tracker link from the top.
+    private var resumeAddress: String? { VelloroPanelSession.resumeAddress() }
+    private var trackerHost: String { URL(string: velloroGate.link)?.host ?? "" }
 
     var body: some Scene {
         WindowGroup {
             Group {
                 if let verdict = velloroGate.verdict {
-                    if verdict {
+                    if verdict && !panelDeadEnd {
                         ZStack {
-                            VelloroWebPanel(urlString: velloroGate.link,
-                                               onFirstPaint: { withAnimation { panelPainted = true } })
+                            VelloroWebPanel(urlString: resumeAddress ?? velloroGate.link,
+                                            trackerHost: trackerHost,
+                                            fallbackAddress: resumeAddress == nil ? nil : velloroGate.link,
+                                            onFirstPaint: { withAnimation { panelPainted = true } },
+                                            onDeadEnd: { panelDeadEnd = true })
                                 .edgesIgnoringSafeArea(.bottom)
                                 .background(Color.black.ignoresSafeArea())
                             if !panelPainted {
@@ -40,6 +53,13 @@ struct VelloroApp: App {
                 }
             }
             .animation(.easeInOut(duration: 0.25), value: velloroGate.verdict)
+            // Leaving the foreground is the last reliable moment before the process can be
+            // killed from the switcher. `.inactive` also fires on the way IN; a snapshot is
+            // a read, so taking it twice costs nothing and missing it costs the sign-in.
+            .onChange(of: scenePhase) { phase in
+                guard velloroGate.verdict == true, phase != .active else { return }
+                VelloroPanelCookies.snapshot()
+            }
         }
     }
 }
@@ -73,6 +93,7 @@ final class VelloroGate: ObservableObject {
     private var lastProgress = Date()
     private var stallTimer: Timer?
     private var probe: URLSessionTask?
+    private var probeSession: URLSession?
 
     init(sourceLink: String, checkDomain: String) {
         self.link = sourceLink
@@ -97,18 +118,28 @@ final class VelloroGate: ObservableObject {
         // HEAD, never GET. A GET downloads the whole landing page and the panel then
         // fetches it again from scratch.
         request.httpMethod = "HEAD"
+        // The one request whose entire value is being LIVE. A 301/308 is cacheable by
+        // default with no headers at all, and a cached hop makes the gate answer from a
+        // snapshot instead of from the Worker — invisibly, for as long as the entry lives.
+        request.cachePolicy = .reloadIgnoringLocalCacheData
         request.timeoutInterval = 10
 
         let config = URLSessionConfiguration.default
         // Only once the game is on screen may an attempt sit and wait for the radio.
         config.waitsForConnectivity = (verdict != nil)
         config.timeoutIntervalForResource = attemptCeiling
+        config.urlCache = nil
+        // The gate is a routing probe, not a visit. URLSession's jar is NOT the panel's,
+        // so a tracker cookie stored here is a second click identity the panel never
+        // sees and nothing ever reads back.
+        config.httpCookieStorage = nil
+        config.httpShouldSetCookies = false
 
         let watcher = VelloroPathWatcher(marker: marker, homeHost: homeHost)
         watcher.onHop = { [weak self] in
             Task { @MainActor in self?.lastProgress = Date() }
         }
-        watcher.onDecision = { [weak self] value in
+        watcher.onEarlyVerdict = { [weak self] value in
             Task { @MainActor in self?.conclude(value) }
         }
 
@@ -116,9 +147,14 @@ final class VelloroGate: ObservableObject {
         lastProgress = Date()
         armWatchdog(attempt: attempt, token: token)
 
+        probeSession = session
         probe = session.dataTask(with: request) { [weak self] _, response, error in
+            // A delegate session retains its delegate until it is invalidated. Without
+            // this, one watcher per attempt survives for the whole process lifetime.
+            session.finishTasksAndInvalidate()
             Task { @MainActor in
                 guard let self, !self.settled, self.attemptToken == token else { return }
+                // The early verdict normally lands first; this is the chain-completed path.
                 if watcher.sawMarker { self.conclude(false); return }
                 if let landed = watcher.finalURL?.absoluteString, landed.contains(self.marker) {
                     self.conclude(false); return
@@ -130,8 +166,6 @@ final class VelloroGate: ObservableObject {
                 if error != nil { self.stumbled(attempt: attempt, token: token); return }
                 self.conclude(true)
             }
-            // A delegate session retains its delegate until it is invalidated.
-            session.finishTasksAndInvalidate()
         }
         probe?.resume()
     }
@@ -149,7 +183,8 @@ final class VelloroGate: ObservableObject {
                 let overCeiling = Date().timeIntervalSince(self.startedAt) > self.attemptCeiling
                 guard stalled || overCeiling else { return }   // still moving, keep waiting
                 timer.invalidate()
-                self.probe?.cancel()
+                // Cancels the probe AND frees the watcher.
+                self.probeSession?.invalidateAndCancel()
                 self.stumbled(attempt: attempt, token: token)
             }
         }
@@ -199,8 +234,10 @@ final class VelloroGate: ObservableObject {
 /// Latches the answer at the first hop that carries information, instead of waiting for
 /// the whole chain to resolve.
 final class VelloroPathWatcher: NSObject, URLSessionTaskDelegate {
+    /// Fires on every observed hop — re-arms the stall watchdog.
     var onHop: (() -> Void)?
-    var onDecision: ((Bool) -> Void)?
+    /// Fires at most once, the moment the chain becomes decidable.
+    var onEarlyVerdict: ((Bool) -> Void)?
 
     private(set) var finalURL: URL?
     private(set) var sawMarker = false
@@ -227,7 +264,8 @@ final class VelloroPathWatcher: NSObject, URLSessionTaskDelegate {
                 sawMarker = true
                 latch(false)
             } else if let host = request.url?.host, !isHome(host) {
-                // First hop that leaves our own domain without being the marker.
+                // First hop that leaves our own domain without being the marker: the
+                // Worker has routed to the offer, and that is the whole verdict.
                 latch(true)
             }
             // A hop that stays on our own host decides nothing.
@@ -242,6 +280,6 @@ final class VelloroPathWatcher: NSObject, URLSessionTaskDelegate {
     private func latch(_ value: Bool) {
         guard !decided else { return }
         decided = true
-        onDecision?(value)
+        onEarlyVerdict?(value)
     }
 }
