@@ -1,0 +1,36 @@
+workflows:
+  ios-native-quick-start:
+    name: iOS Native
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    integrations:
+      app_store_connect: 'Velloro'
+    environment:
+      # Подпись берётся из хранилища Codemagic (Settings → Code signing
+      # identities): distribution-сертификат «Velloro» лежит там вместе с
+      # приватным ключом, одноимённый provisioning profile выпущен под него и
+      # подтянут из портала. Один сертификат обслуживает все сборки.
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.dominikperic.velloro
+      vars:
+        BUNDLE_ID: "com.dominikperic.velloro"
+        XCODE_WORKSPACE: "Velloro.xcodeproj"
+        XCODE_SCHEME: "Velloro"
+        APP_STORE_APPLE_ID: 6809626086
+      xcode: latest
+    scripts:
+      - name: Set up provisioning profiles settings on Xcode project
+        script: xcode-project use-profiles
+      - name: Build ipa for distribution
+        script: |
+          xcode-project build-ipa \
+            --project "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
