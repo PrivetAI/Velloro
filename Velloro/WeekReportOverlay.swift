@@ -167,7 +167,7 @@ struct RulingCard: View {
                     HStack {
                         Text(pledge.kind.label).font(Quill.body(12.5)).foregroundColor(Ink.textSoft)
                         Spacer()
-                        Text("said \(pledge.statedValue) fl · \(pledge.kind.liquidityLabel.lowercased())")
+                        Text("said \(Tally.florins(pledge.statedValue)) · \(pledge.kind.liquidityLabel.lowercased())")
                             .font(Quill.label(10)).foregroundColor(Ink.textFaint)
                     }
                 }

@@ -372,8 +372,8 @@ struct LedgerRow: View {
                             .font(Quill.body(12.5)).foregroundColor(Ink.textSoft)
                         Spacer()
                         Text(loan.status.isResolved
-                             ? "said \(pledge.statedValue), worth \(pledge.trueValue)"
-                             : "said to be worth \(pledge.statedValue)")
+                             ? "said \(Tally.coin(pledge.statedValue)), worth \(Tally.coin(pledge.trueValue))"
+                             : "said to be worth \(Tally.coin(pledge.statedValue))")
                             .font(Quill.label(10.5)).foregroundColor(Ink.textFaint)
                     }
                 }

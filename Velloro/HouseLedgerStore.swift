@@ -140,10 +140,10 @@ final class HouseLedger: ObservableObject {
 
     var nextInstrumentHint: String? {
         if save.peakWorth < 2800 {
-            return "Bills of exchange open to a house worth 2,800 fl. Yours has reached \(save.peakWorth)."
+            return "Bills of exchange open to a house worth 2,800 fl. Yours has reached \(Tally.florins(save.peakWorth))."
         }
         if save.peakWorth < 6000 {
-            return "Commenda partnerships open to a house worth 6,000 fl. Yours has reached \(save.peakWorth)."
+            return "Commenda partnerships open to a house worth 6,000 fl. Yours has reached \(Tally.florins(save.peakWorth))."
         }
         return nil
     }
